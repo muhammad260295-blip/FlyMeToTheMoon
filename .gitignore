@@ -1,6 +1,8 @@
 node_modules
 dist
+# Secrets — never commit; use .env.example only. Rotate SERPAPI_KEY if exposed.
 .env
+**/.env
 .env.local
 *.log
 .DS_Store

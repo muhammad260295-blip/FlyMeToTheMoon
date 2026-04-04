@@ -1,18 +1,19 @@
-import { Link } from "react-router";
+import { ButtonLink } from "../components/ButtonLink";
 
 export function HomePage() {
   return (
-    <section className="page">
-      <h1>Welcome</h1>
-      <p className="lede">
-        This app demonstrates the search API: a shared contract, a stub backend,
-        and a React UI with loading and empty states.
-      </p>
+    <article className="page" aria-labelledby="home-heading">
+      <header className="page__header">
+        <h1 id="home-heading">Welcome</h1>
+        <p className="page__lede">
+          Search round-trip itineraries via SerpAPI (Google Flights) on the
+          server—your API key stays on the backend. Set places, an outbound date
+          window, and trip length; results show cheapest and best options.
+        </p>
+      </header>
       <p>
-        <Link className="button" to="/search">
-          Open search
-        </Link>
+        <ButtonLink to="/search">Search flights</ButtonLink>
       </p>
-    </section>
+    </article>
   );
 }
