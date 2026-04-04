@@ -1,0 +1,17 @@
+{
+  "name": "fly-me-to-the-moon",
+  "private": true,
+  "workspaces": [
+    "packages/contracts",
+    "backend",
+    "frontend"
+  ],
+  "scripts": {
+    "postinstall": "npm run build -w packages/contracts",
+    "dev": "concurrently -n backend,frontend -c blue,green \"npm run dev -w backend\" \"npm run dev -w frontend\"",
+    "build": "npm run build -w packages/contracts && npm run build -w backend && npm run build -w frontend"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
