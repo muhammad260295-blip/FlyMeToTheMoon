@@ -739,6 +739,20 @@ a {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.25);
 }
 
+.place-field__status {
+  padding: 0.5rem 0.65rem;
+  list-style: none;
+}
+
+.place-field__status-text {
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+
+.place-field__status-text--error {
+  color: var(--error);
+}
+
 .place-field__option {
   display: flex;
   flex-wrap: wrap;

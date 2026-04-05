@@ -16,8 +16,11 @@ export async function fetchGoogleFlightsAutocomplete(
     q: query,
     hl: "en",
     gl: "us",
-    exclude_regions: "true",
   });
+  // Opt-in: fewer results but less noise from broad regions. Default off so autocomplete feels fuller.
+  if (process.env.SERP_AUTOCOMPLETE_EXCLUDE_REGIONS === "true") {
+    qs.set("exclude_regions", "true");
+  }
 
   const res = await fetch(`${SERPAPI_SEARCH}?${qs.toString()}`);
   const text = await res.text();
